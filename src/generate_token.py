@@ -43,18 +43,18 @@ def manual():
                 s_st.append(st)
                 s_et.append(et)
             n='"'+s_name[0]+'"'
-            st1='(long)'+str(s_st[0][0])+'*3600+(long)'+str(s_st[0][1])+'*60'
-            et1='(long)'+str(s_et[0][0])+'*3600+(long)'+str(s_et[0][1])+'*60'
+            st1='(long)'+str(int(s_st[0][0]))+'*3600+(long)'+str(int(s_st[0][1]))+'*60'
+            et1='(long)'+str(int(s_et[0][0]))+'*3600+(long)'+str(int(s_et[0][1]))+'*60'
             for i in s_name[1:]:
                 n+=','+'"'+i+'"'
             for i in s_st[1:]:
-                st1+=','+'(long)'+str(i[0])+'*3600+(long)'+str(i[1])+'*60'
+                st1+=','+'(long)'+str(int(i[0]))+'*3600+(long)'+str(int(i[1]))+'*60'
             for i in s_et[1:]:
-                et1+=','+'(long)'+str(i[0])+'*3600+(long)'+str(i[1])+'*60'    
+                et1+=','+'(long)'+str(int(i[0]))+'*3600+(long)'+str(int(i[1]))+'*60'    
             file = open(os.path.join(os.getcwd(),'profiles',profname+".txt"), 'w')
             file.write('COPY THIS TOKEN TO ARDUINO SKETCH')
             file.write('\n\n\n')
-            file.write('long time[3] = {'+str(lt[0])+','+str(lt[1])+','+str(lt[2])+'};\n')
+            file.write('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};\n')
             file.write('int events = '+str(no)+';\n')
             file.write('String eventName['+str(no)+'] = {'+n+'};\n')
             file.write('long eventStartTime['+str(no)+'] = {'+st1+'};\n')
@@ -123,19 +123,19 @@ def manual():
             s_st.append(st.split(':'))
             s_et.append(et.split(':'))
         n='"'+s_name[0]+'"'
-        st1='(long)'+str(s_st[0][0])+'*3600+(long)'+str(s_st[0][1])+'*60'
-        et1='(long)'+str(s_et[0][0])+'*3600+(long)'+str(s_et[0][1])+'*60'
+        st1='(long)'+str(int(s_st[0][0]))+'*3600+(long)'+str(int(s_st[0][1]))+'*60'
+        et1='(long)'+str(int(s_et[0][0]))+'*3600+(long)'+str(int(s_et[0][1]))+'*60'
         for i in s_name[1:]:
             n+=','+'"'+i+'"'
         for i in s_st[1:]:
-            st1+=','+'(long)'+str(i[0])+'*3600+(long)'+str(i[1])+'*60'
+            st1+=','+'(long)'+str(int(i[0]))+'*3600+(long)'+str(int(i[1]))+'*60'
         for i in s_et[1:]:
-            et1+=','+'(long)'+str(i[0])+'*3600+(long)'+str(i[1])+'*60'
+            et1+=','+'(long)'+str(int(i[0]))+'*3600+(long)'+str(int(i[1]))+'*60'
             
         lt=(time.localtime(time.time())[3:6])
         print("COPY THIS TOKEN TO ARDUINO SKETCH")
         print('\n\n\n') 
-        print('long time[3] = {'+str(lt[0])+','+str(lt[1])+','+str(lt[2])+'};')
+        print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};')
         print('int events = ',no,';')
         print('String eventName[',no,'] = {',n,'};')
         print('long eventStartTime[',no,'] = {',st1,'};')
@@ -190,7 +190,7 @@ elif mode == "silent" or mode == "4":
     if mode1 == "":
         print('\n\n\n\n')
         lt=(time.localtime(time.time())[3:6])  
-        print('long time[3] = {'+str(lt[0])+','+str(lt[1])+','+str(lt[2])+'};')
+        print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};')
         print('int events = 0;')
         print('String eventName[1] = {"No Events"};')
         print('long eventStartTime[1] = {(long)86399};')
