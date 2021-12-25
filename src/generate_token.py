@@ -6,10 +6,7 @@ print('==============================')
 print('+ BOTAMINDER TOKEN GENERATOR +')
 print('==============================')
 print('''This script can be used to generate the token used to update the arduino with latest time and events\
-in a quick fashion. If youre opening running this file for the first time, Try googlecalendar mode which can automatically 
-fetch your events from your google calendar.  
-\nONLY EMAIL IDS REGISTERED UNDER THE IIT MANDI ORGANISATION WORK IN GOOGLECALENDAR MODE!! (EG: XXXXXX@students.iitmandi.ac.in)\n
-SEE FULL DOCUMENTATION ON THE GITHUB REPO FOR STEP BY STEP INSTRUCTIONS FOR EVERY MODE.\n''')
+in a quick fashion.\n''')
 
 print("modes available:\n1. manual\n2. eventsonly\n3. healthonly\n4. silent\n")
 
@@ -191,7 +188,7 @@ elif mode == "silent" or mode == "4":
         print('\n\n\n\n')
         lt=(time.localtime(time.time())[3:6])  
         print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};')
-        print('int events = 0;')
+        print('int events = 1;')
         print('String eventName[1] = {"No Events"};')
         print('long eventStartTime[1] = {(long)86399};')
         print('long eventEndTime[1] = {(long)86399};')
