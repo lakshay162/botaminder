@@ -151,11 +151,11 @@ def manual():
 
 ask_for_mode()
 
-if mode == "manual" or mode == "2":
+if mode == "manual" or mode == "1":
     mode = "manual"
     manual()
 
-elif mode == "healthonly" or mode == "4":
+elif mode == "healthonly" or mode == "3":
     mode = "health"
     print("HEALTH MODE SELECTED")
     print("======================")
@@ -167,7 +167,7 @@ elif mode == "healthonly" or mode == "4":
     else:
         print("Wrong Input.. TRY AGAIN")
 
-elif mode == "eventsonly" or mode == "3":
+elif mode == "eventsonly" or mode == "2":
     mode='events'
     print("Events ONLY MODE SELECTED")
     print("======================")
@@ -179,7 +179,7 @@ elif mode == "eventsonly" or mode == "3":
     else:
         print("Wrong Input.. TRY AGAIN")
 
-elif mode == "silent" or mode == "5":
+elif mode == "silent" or mode == "4":
     mode='silent'
     print("SILENT MODE SELECTED")
     print("====================")
