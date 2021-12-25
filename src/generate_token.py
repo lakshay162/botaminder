@@ -31,13 +31,13 @@ def manual():
         profiles.pop(profiles.index('.gitkeep'))
         def writing():
             no=int(input('enter the number of events: '))
-            print('\n\n')
+            print('\n')
             for i in range(no):
                 q='enter the title of event '+str(i+1)+':'
                 name=input(q)
                 st=(input('enter start time seperated by ":" :').split(':'))
                 et=(input('enter end time seperated by ":" :').split(':'))
-                print('\n\n')
+                print('\n')
                 s_name.append(name)
                 s_st.append(st)
                 s_et.append(et)
@@ -113,13 +113,13 @@ def manual():
         writeprofile()
     elif profileoption=='3' or profileoption=='input manually':
         no=int(input('enter the number of events'))
-        print('\n\n')
+        print('\n')
         for i in range(no):
             q='enter the title of event '+str(i+1)+':'
             name=input(q)
             st=(input('enter start time seperated by ":" :'))
             et=(input('enter end time seperated by ":" :'))
-            print('\n\n')
+            print('\n')
             s_name.append(name)
             s_st.append(st.split(':'))
             s_et.append(et.split(':'))
