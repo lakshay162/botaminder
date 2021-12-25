@@ -57,8 +57,8 @@ def manual():
             file.write('long time[3] = {'+str(lt[0])+','+str(lt[1])+','+str(lt[2])+'};\n')
             file.write('int events = '+str(no)+';\n')
             file.write('String eventName['+str(no)+'] = {'+n+'};\n')
-            file.write('long eventStartTime[2] = {'+st1+'};\n')
-            file.write('long eventEndTime[2] = {'+et1+'};\n')
+            file.write('long eventStartTime[',no,'] = {'+st1+'};\n')
+            file.write('long eventEndTime[',no,'] = {'+et1+'};\n')
             file.write('int eventScrollingSpeed = 4;'+'\n'+\
                        'long waterReminder = (long)3*3600;'+'\n'+\
                        'long breakReminder = (long)4*3600;'+'\n'+\
@@ -136,8 +136,8 @@ def manual():
         print('long time[3] = {'+str(lt[0])+','+str(lt[1])+','+str(lt[2])+'};')
         print('int events = ',no,';')
         print('String eventName[',no,'] = {',n,'};')
-        print('long eventStartTime[2] = {',st1,'};')
-        print('long eventEndTime[2] = {',et1,'};')
+        print('long eventStartTime[',no,'] = {',st1,'};')
+        print('long eventEndTime[',no,'] = {',et1,'};')
         print('int eventScrollingSpeed = 4;'+'\n'+\
             'long waterReminder = (long)3*3600;'+'\n'+\
             'long breakReminder = (long)4*3600;'+'\n'+\
