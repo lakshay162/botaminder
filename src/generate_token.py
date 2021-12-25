@@ -11,7 +11,7 @@ fetch your events from your google calendar.
 \nONLY EMAIL IDS REGISTERED UNDER THE IIT MANDI ORGANISATION WORK IN GOOGLECALENDAR MODE!! (EG: XXXXXX@students.iitmandi.ac.in)\n
 SEE FULL DOCUMENTATION ON THE GITHUB REPO FOR STEP BY STEP INSTRUCTIONS FOR EVERY MODE.\n''')
 
-print("modes available:\n1. manual\n2. eventsonly\n2. healthonly\n4. silent\n")
+print("modes available:\n1. manual\n2. eventsonly\n3. healthonly\n4. silent\n")
 
 mode, mode1 = "",""
 
@@ -57,15 +57,16 @@ def manual():
             file.write('long time[3] = {'+str(lt[0])+','+str(lt[1])+','+str(lt[2])+'};\n')
             file.write('int events = '+str(no)+';\n')
             file.write('String eventName['+str(no)+'] = {'+n+'};\n')
-            file.write('long eventStartTime[',no,'] = {'+st1+'};\n')
-            file.write('long eventEndTime[',no,'] = {'+et1+'};\n')
+            file.write('long eventStartTime['+str(no)+'] = {'+st1+'};\n')
+            file.write('long eventEndTime['+str(no)+'] = {'+et1+'};\n')
             file.write('int eventScrollingSpeed = 4;'+'\n'+\
                        'long waterReminder = (long)3*3600;'+'\n'+\
                        'long breakReminder = (long)4*3600;'+'\n'+\
-                       'long skippingBreak = (long)17*3600;\n')
-            file.write('String userMode = "'+mode+'";')
+                       'long eveningBreak = (long)17*3600;\n')
+            
             file = open(os.path.join(os.getcwd(),'profiles',profname+'.txt'), 'r')
             print(file.read())
+            print('String userMode = "'+mode+'";')
             print('\n\n')
             file.close()
         if not profiles:
@@ -90,6 +91,7 @@ def manual():
         if profname-1 < len(profiles):
             file=open(os.path.join(os.getcwd(),'profiles',profiles[profname-1]))
             print(file.read())
+            print('String userMode = "'+mode+'";')
             file.close()
             print('\n\n')
         else:
@@ -141,7 +143,7 @@ def manual():
         print('int eventScrollingSpeed = 4;'+'\n'+\
             'long waterReminder = (long)3*3600;'+'\n'+\
             'long breakReminder = (long)4*3600;'+'\n'+\
-            'long skippingBreak = (long)17*3600;')
+            'long eveningBreak = (long)17*3600;')
         print('String userMode = "'+mode+'";')
         print('\n\n')
     else:
@@ -196,7 +198,7 @@ elif mode == "silent" or mode == "4":
         print('int eventScrollingSpeed = 4;'+'\n'+\
               'long waterReminder = (long)86399;'+'\n'+\
               'long breakReminder = (long)86399;'+'\n'+\
-              'long skippingBreak = (long)86399;')
+              'long eveningBreak = (long)86399;')
         print('String userMode = "'+'silent'+'";')
         print('\n\n')
     elif mode1 == "manual" or  mode1=="1":
