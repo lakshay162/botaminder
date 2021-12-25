@@ -117,7 +117,7 @@ def manual():
         for i in range(no):
             q='enter the title of event '+str(i+1)+':'
             name=input(q)
-            st=(input('enter start time seperated by ":" >:'))
+            st=(input('enter start time seperated by ":" :'))
             et=(input('enter end time seperated by ":" :'))
             print('\n\n')
             s_name.append(name)
