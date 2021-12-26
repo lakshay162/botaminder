@@ -60,6 +60,8 @@ def manual():
                        'long eveningBreak = (long)17*3600;\n')
             
             file = open(os.path.join(os.getcwd(),'profiles',profname+'.txt'), 'r')
+            print("COPY THIS TOKEN TO ARDUINO SKETCH")
+            print('\n\n\n')
             lt=(time.localtime(time.time())[3:6])
             print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};') 
             print(file.read())
@@ -87,6 +89,8 @@ def manual():
         profname=int(input('enter the number of the profile:'))
         if profname-1 < len(profiles):
             file=open(os.path.join(os.getcwd(),'profiles',profiles[profname-1]))
+            print("COPY THIS TOKEN TO ARDUINO SKETCH")
+            print('\n\n\n')
             lt=(time.localtime(time.time())[3:6])
             print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};')
             print(file.read())
