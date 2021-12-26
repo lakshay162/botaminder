@@ -25,7 +25,6 @@ def manual():
     global mode
     
     def writeprofile():
-        lt=(time.localtime(time.time())[3:6])
         profname=input('enter the profile name:')
         profiles=os.listdir(os.path.join(os.getcwd(),'profiles'))
         profiles.pop(profiles.index('.gitkeep'))
@@ -51,9 +50,6 @@ def manual():
             for i in s_et[1:]:
                 et1+=','+'(long)'+str(int(i[0]))+'*3600+(long)'+str(int(i[1]))+'*60'    
             file = open(os.path.join(os.getcwd(),'profiles',profname+".txt"), 'w')
-            file.write('COPY THIS TOKEN TO ARDUINO SKETCH')
-            file.write('\n\n\n')
-            file.write('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};\n')
             file.write('int events = '+str(no)+';\n')
             file.write('String eventName['+str(no)+'] = {'+n+'};\n')
             file.write('long eventStartTime['+str(no)+'] = {'+st1+'};\n')
@@ -64,6 +60,8 @@ def manual():
                        'long eveningBreak = (long)17*3600;\n')
             
             file = open(os.path.join(os.getcwd(),'profiles',profname+'.txt'), 'r')
+            lt=(time.localtime(time.time())[3:6])
+            print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};') 
             print(file.read())
             print('String userMode = "'+mode+'";')
             print('\n\n')
@@ -89,6 +87,8 @@ def manual():
         profname=int(input('enter the number of the profile:'))
         if profname-1 < len(profiles):
             file=open(os.path.join(os.getcwd(),'profiles',profiles[profname-1]))
+            lt=(time.localtime(time.time())[3:6])
+            print('long time[3] = {'+str(int(lt[0]))+','+str(int(lt[1]))+','+str(int(lt[2]))+'};')
             print(file.read())
             print('String userMode = "'+mode+'";')
             file.close()
