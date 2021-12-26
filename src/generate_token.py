@@ -103,7 +103,7 @@ def manual():
 
     profileoption= input('select the option:') 
     if profileoption=='1' or profileoption=='choose a profile':
-        profiles=os.listdir(str(os.join.path(os.getcwd(),'profiles')))
+        profiles=os.listdir(str(os.path.join(os.getcwd(),'profiles')))
         profiles.pop(profiles.index('.gitkeep'))
         if not profiles:
             print('\n\nno profiles found try again\n\n')
